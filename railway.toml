@@ -1,0 +1,13 @@
+[build]
+builder = "nixpacks"
+buildCommand = "pip install uv && uv venv .venv && . .venv/bin/activate && uv pip install -e ."
+
+[deploy]
+startCommand = ".venv/bin/fastapi run philoagents/infrastructure/api.py --port $PORT --host 0.0.0.0"
+healthcheckPath = "/docs"
+healthcheckTimeout = 100
+restartPolicyType = "on-failure"
+restartPolicyMaxRetries = 10
+
+[env]
+PYTHON_VERSION = "3.11"
