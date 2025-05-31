@@ -1,11 +1,13 @@
 [build]
 builder = "nixpacks"
-buildCommand = "apt-get update && apt-get install -y python3-pip && pip install uv && uv venv .venv && . .venv/bin/activate && uv pip install -e ."
+buildCommand = "cd philoagents-api && python3 -m pip install --upgrade pip && pip install uv && uv venv .venv && . .venv/bin/activate && uv pip install -e ."
 
 [deploy]
 startCommand = "make infrastructure-up"
 healthcheckPath = "/docs"
 healthcheckTimeout = 100
+restartPolicyType = "on-failure"
+restartPolicyMaxRetries = 10
 
 [env]
 PYTHON_VERSION = "3.11"
