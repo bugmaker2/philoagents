@@ -1,6 +1,6 @@
 [build]
 builder = "nixpacks"
-buildCommand = "apt-get update && apt-get install -y docker.io docker-compose && make infrastructure-up"
+buildCommand = "apt-get update && apt-get install -y docker.io docker-compose && docker-compose up -d"
 
 [deploy]
 startCommand = "echo 1"
