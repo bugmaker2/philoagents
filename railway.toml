@@ -1,10 +1,10 @@
 [build]
 builder = "nixpacks"
-buildCommand = "apt-get update && apt-get install -y docker.io docker-compose"
+buildCommand = "apt-get update && apt-get install -y docker.io docker-compose && make infrastructure-up"
 
 [deploy]
-startCommand = "make infrastructure-up"
-healthcheckPath = "/docs"
+startCommand = "echo 1"
+healthcheckPath = "/doc"
 healthcheckTimeout = 100
 
 [env]
