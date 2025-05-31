@@ -3,7 +3,7 @@ builder = "nixpacks"
 buildCommand = "make infrastructure-up"
 
 [deploy]
-startCommand = ""
+startCommand = "echo 1"
 healthcheckPath = "/docs"
 healthcheckTimeout = 100
 
