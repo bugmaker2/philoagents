@@ -3,7 +3,7 @@ builder = "nixpacks"
 buildCommand = "pip install uv && uv venv .venv && . .venv/bin/activate && uv pip install -e ."
 
 [deploy]
-startCommand = ".venv/bin/fastapi run philoagents/infrastructure/api.py --port $PORT --host 0.0.0.0"
+startCommand = "make infrastructure-up"
 healthcheckPath = "/docs"
 healthcheckTimeout = 100
 
