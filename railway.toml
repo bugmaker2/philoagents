@@ -1,9 +1,9 @@
 [build]
 builder = "nixpacks"
-buildCommand = "apt-get update && apt-get install -y python3 python3-pip && cd philoagents-api && pip install uv && uv venv .venv && . .venv/bin/activate && uv pip install -e ."
+buildCommand = "python --version"
 
 [deploy]
-startCommand = "make infrastructure-up"
+startCommand = "apt-get update && apt-get install -y python3 python3-pip && cd philoagents-api && pip install uv && uv venv .venv && . .venv/bin/activate && uv pip install -e .make infrastructure-up"
 healthcheckPath = "/docs"
 healthcheckTimeout = 100
 
