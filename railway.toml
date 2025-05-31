@@ -1,6 +1,6 @@
 [build]
 builder = "nixpacks"
-buildCommand = "cd philoagents-api && uv venv .venv && . .venv/bin/activate && uv pip install -e ."
+buildCommand = "apt-get install -y python3 python3-pip && cd philoagents-api && pip install uv && uv venv .venv && . .venv/bin/activate && uv pip install -e ."
 
 [deploy]
 startCommand = "make infrastructure-up"
