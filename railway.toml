@@ -6,8 +6,6 @@ buildCommand = "cd philoagents-api && python3 -m pip install --upgrade pip && pi
 startCommand = "make infrastructure-up"
 healthcheckPath = "/docs"
 healthcheckTimeout = 100
-restartPolicyType = "on-failure"
-restartPolicyMaxRetries = 10
 
 [env]
 PYTHON_VERSION = "3.11"
